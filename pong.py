@@ -1,5 +1,4 @@
 import turtle
-import os # import winsound if on winodws
 
 window = turtle.Screen()
 window.title("Pong by @MarkChaitra")
@@ -89,11 +88,10 @@ while True:
     if(ball.ycor() > 290):
         ball.sety(290)
         ball.dy *= -1
-        os.system("afplay bounce.wav&") # afplay < mac, aplay < linux, winsound.PlaySound("bounce.wav", winsound.SND_ASYNC) < windows
+        
     elif(ball.ycor() < -290):
         ball.sety(-290)
         ball.dy *= -1
-        os.system("afplay bounce.wav&") # only on mac
 
     if(ball.xcor() > 390):
         ball.goto(0,0)
@@ -112,9 +110,7 @@ while True:
     if(ball.xcor() > 340 and ball.xcor() < 350 and ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
         ball.setx(340)
         ball.dx *= -1
-        os.system("afplay bounce.wav&") # only on mac
     elif(ball.xcor() < -340 and ball.xcor() > -350 and ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
         ball.setx(-340)
         ball.dx *= -1
-        os.system("afplay bounce.wav&") # only on mac
     
